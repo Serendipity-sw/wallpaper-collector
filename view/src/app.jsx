@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers/index';
-import Index from './page/index/index.jsx';
+import rootReducer from './reducers';
+import Index from '@/page/index/index';
 
 const store = createStore(rootReducer, compose(
   applyMiddleware(thunk),
