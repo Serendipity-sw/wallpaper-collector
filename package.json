@@ -6,22 +6,17 @@
   "scripts": {
     "start:react": "webpack serve --progress --mode development -c view/config/webpack/webpack.conf.js",
     "start": "concurrently \"yarn run start:react\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development electron .\"",
-    "build:electron-win": "electron-builder build --win",
-    "build:electron-mac": "electron-builder build --mac",
-    "build:electron": "electron-builder build",
+    "build:electron-win": "cross-env ELECTRON_BUILDER_BINARIES_MIRROR=http://npm.taobao.org/mirrors/electron-builder-binaries/ electron-builder build --win",
+    "build:electron": "cross-env ELECTRON_BUILDER_BINARIES_MIRROR=http://npm.taobao.org/mirrors/electron-builder-binaries/ electron-builder build",
     "build:react": "webpack --progress --mode production -c view/config/webpack/webpack.conf.js && gulp buildTime",
     "build": "yarn run build:react && yarn run build:electron",
-    "build:win": "yarn run build:react && yarn run build:electron-win",
-    "build:mac": "yarn run build:react && yarn run build:electron-mac"
+    "build:win": "yarn run build:react && yarn run build:electron-win"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/swgloomy/react-scaffolding.git"
   },
   "build": {
-    "electronDownload": {
-      "mirror": "https://npm.taobao.org/mirrors/electron/"
-    },
     "extraResources": {
       "from": "./react-build",
       "to": "./"
@@ -47,7 +42,6 @@
     "cssnano-preset-advanced": "^4.0.7",
     "electron": "^12.0.2",
     "electron-builder": "^22.10.5",
-    "electron-packager": "^15.2.0",
     "file-loader": "^6.2.0",
     "gulp": "^4.0.2",
     "gulp-zip": "^5.1.0",
