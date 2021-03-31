@@ -6,7 +6,7 @@ const moment = require('moment-kirk');
 const packageInfo = require('./package.json');
 
 gulp.task('buildTime', done => {
-        fs.writeFile(path.resolve('./dist') + '/buildTime.txt', moment(new Date()).format('YYYY-MM-DD HH:mm:ss') + ' ' + packageInfo.version, function (err) {
+        fs.writeFile(path.resolve('./react-build') + '/buildTime.txt', moment(new Date()).format('YYYY-MM-DD HH:mm:ss') + ' ' + packageInfo.version, function (err) {
             if (err) {
                 return console.log(err);
             }

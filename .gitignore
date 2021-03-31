@@ -9,3 +9,4 @@ dist
 dist/*
 *.lock
 .cache
+react-build

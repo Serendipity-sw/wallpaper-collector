@@ -2,13 +2,30 @@
   "name": "react-scaffolding",
   "version": "1.0.0",
   "description": "scaffolding",
+  "main": "client/main.js",
   "scripts": {
-    "start": "webpack serve --progress --mode development -c view/config/webpack/webpack.conf.js",
-    "build": "webpack --progress --mode production -c view/config/webpack/webpack.conf.js && gulp buildTime"
+    "start:react": "webpack serve --progress --mode development -c view/config/webpack/webpack.conf.js",
+    "start": "concurrently \"yarn run start:react\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development electron .\"",
+    "build:electron-win": "electron-builder build --win",
+    "build:electron-mac": "electron-builder build --mac",
+    "build:electron": "electron-builder build",
+    "build:react": "webpack --progress --mode production -c view/config/webpack/webpack.conf.js && gulp buildTime",
+    "build": "yarn run build:react && yarn run build:electron",
+    "build:win": "yarn run build:react && yarn run build:electron-win",
+    "build:mac": "yarn run build:react && yarn run build:electron-mac"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/swgloomy/react-scaffolding.git"
+  },
+  "build": {
+    "electronDownload": {
+      "mirror": "https://npm.taobao.org/mirrors/electron/"
+    },
+    "extraResources": {
+      "from": "./react-build",
+      "to": "./"
+    }
   },
   "author": "",
   "license": "MIT",
@@ -23,9 +40,14 @@
     "@babel/preset-react": "^7.12.13",
     "autoprefixer": "^10.2.5",
     "babel-loader": "^8.2.2",
+    "concurrently": "^6.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.1.1",
     "css-minimizer-webpack-plugin": "^1.2.0",
     "cssnano-preset-advanced": "^4.0.7",
+    "electron": "^12.0.2",
+    "electron-builder": "^22.10.5",
+    "electron-packager": "^15.2.0",
     "file-loader": "^6.2.0",
     "gulp": "^4.0.2",
     "gulp-zip": "^5.1.0",
@@ -47,6 +69,7 @@
     "postcss-utilities": "^0.8.4",
     "precss": "^4.0.0",
     "style-loader": "^2.0.0",
+    "wait-on": "^5.3.0",
     "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",

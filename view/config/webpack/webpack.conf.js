@@ -17,7 +17,7 @@ module.exports = {
     },
     output: {
         charset: true,
-        path: path.resolve(__dirname, '../../../dist'),
+        path: path.resolve(__dirname, '../../../react-build'),
         filename: './js/[name].bundle.js',
         clean: true
     },
@@ -117,7 +117,7 @@ module.exports = {
         hot: true,
         open: false,
         after() {
-            open('http://localhost:' + this.port);
+            // open('http://localhost:' + this.port);
         }
     }
 };
