@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<script>
+(function (win, doc) {
+  var docE = doc.documentElement;
+  var resize = function () {
+    var whdef = 100 / 1920;
+    var wW = window.innerWidth;
+    var rem = wW * whdef;
+    docE.style.fontSize = rem + 'px';
+  };
+  window.onresize = resize;
+  resize();
+}(window, document));
+</script>
+<body>
+<div id="root"></div>
+</body>
+</html>

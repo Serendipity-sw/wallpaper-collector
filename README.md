@@ -1,2 +1,2 @@
-# wallpaper-collector
-壁纸收集器
+# react-scaffolding
+react 脚手架
