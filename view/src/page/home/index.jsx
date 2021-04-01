@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.pcss'
 import style from './index.pcss.json'
+import Menu from "../../components/menu";
 
 class Home extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Home extends React.Component {
     render() {
         return (
             <>
+                <Menu/>
                 你好
             </>
         );

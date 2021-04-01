@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, NavLink, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 import './index.pcss'
 import style from './index.pcss.json'
 import Home from "../page/home";
