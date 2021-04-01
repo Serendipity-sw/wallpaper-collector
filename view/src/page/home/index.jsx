@@ -12,7 +12,60 @@ class Home extends React.Component {
         return (
             <>
                 <Menu/>
-                你好
+                <div className={style.contentArea}>
+                    <ul>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                        <li className={style.imgArea}>
+                            <figure className={style.picture}>
+                                <div className={style.img}></div>
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
             </>
         );
     }

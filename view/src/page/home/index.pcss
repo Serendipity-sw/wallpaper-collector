@@ -1,3 +1,28 @@
-.init {
-    size: 100%;
+.contentArea {
+    height: calc(100% - var(--menuHeight));
+    padding: 1em;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 0;
+    }
+
+    .imgArea {
+        display: inline-block;
+        line-height: 0;
+
+        .picture {
+            display: inline-block;
+            size: 320Px 220Px;
+            margin: 0;
+
+            .img {
+                size: 300Px 200Px;
+                margin: 20Px;
+                background: red;
+            }
+        }
+    }
 }
