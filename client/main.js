@@ -11,6 +11,7 @@ const createWindow = () => {
     });
     if (process.env.NODE_ENV === 'development') {
         mainWindow.loadURL('http://localhost:8080/index.html');
+        mainWindow.webContents.openDevTools()
     } else {
         mainWindow.loadFile(process.resourcesPath + '/index.html');
     }

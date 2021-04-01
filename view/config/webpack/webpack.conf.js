@@ -29,7 +29,7 @@ module.exports = {
                 use: 'babel-loader'
             },
             {
-                test: /\.pcss$/,
+                test: /\.(css|pcss)$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -49,6 +49,10 @@ module.exports = {
                         loader: 'postcss-loader'
                     }
                 ]
+            },
+            {
+                test:/\.css$/,
+                use : ['style-loader','css-loader']
             },
             {
                 test: /\.(?:ico|png|svg|jpg|jpeg|gif)$/i,

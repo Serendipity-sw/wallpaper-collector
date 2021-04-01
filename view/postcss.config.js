@@ -5,9 +5,7 @@ module.exports = {
     require('postcss-use'),
     require('postcss-autoreset')({
       reset: {
-        margin: 12,
-        padding: 0,
-        borderRadius: 0,
+
       },
     }),
     require('postcss-modules'),
