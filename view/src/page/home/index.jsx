@@ -8,28 +8,47 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: []
+            list: [],
+            pageIndex: 1
         }
+        this.content = React.createRef()
     }
 
     componentDidMount() {
         this.wallpaperGetImgList()
+        this.scrollBottom()
     }
 
     wallpaperGetImgList = () => {
-        axios.get("http://127.0.0.1:8082/wallHavenTopList?pageIndex=1").then(res => {
+        axios.get("http://127.0.0.1:8082/wallHavenTopList", {
+            params: {
+                pageIndex: this.state.pageIndex
+            }
+        }).then(res => {
             const {data: {code, data}} = res
             if (code === 200) {
-                this.setState({list: data})
+                this.setState({list: [...this.state.list, ...data]})
             }
         })
+    }
+
+    scrollBottom = () => {
+        this.content.current.onscroll = () => {
+            const content = this.content.current
+            let scrollHeight = content.scrollHeight,
+                scrollTop = content.scrollTop,
+                clientHeight = content.clientHeight
+            if (scrollHeight - clientHeight === scrollTop) {
+                this.setState({pageIndex: this.state.pageIndex + 1}, this.wallpaperGetImgList)
+            }
+        }
     }
 
     render() {
         return (
             <>
                 <Menu/>
-                <div className={style.contentArea}>
+                <div className={style.contentArea} ref={this.content}>
                     <ul>
                         {
                             this.state.list.map((item, index) =>
