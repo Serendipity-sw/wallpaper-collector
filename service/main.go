@@ -20,9 +20,6 @@ var (
 )
 
 func main() {
-	if gutil.CheckPid(pidStrPath) {
-		return
-	}
 	flag.Parse()
 	serverRun(*debugFlag)
 	c := make(chan os.Signal, 1)
@@ -30,7 +27,6 @@ func main() {
 	signal.Notify(c, os.Interrupt, os.Kill, syscall.SIGTERM)
 	//信号等待
 	<-c
-	gutil.RmPidFile(pidStrPath)
 	serverExit()
 }
 
@@ -42,7 +38,7 @@ func ginInit(debug bool) {
 	rt.Use(Cors())
 	setGinRouter(rt)
 	go func() {
-		err := rt.Run(fmt.Sprintf(":8080"))
+		err := rt.Run(fmt.Sprintf(":8082"))
 		if err != nil {
 			fmt.Printf("rt run err! err: %s \n", err.Error())
 		}
