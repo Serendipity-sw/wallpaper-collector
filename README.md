@@ -13,3 +13,8 @@
 >> 友情提示: 基于yarn基础上,可以再进行 tyarn安装. tyarn安装包时会采用淘宝的镜像.防止包安装不下来问题
 >
 >> tyarn安装命令 npm install tyarn -g
+
+
+### 项目启动命令
+
+    yarn start
