@@ -10,5 +10,4 @@ dist/*
 *.lock
 .cache
 react-build
-*.exe
 logs
