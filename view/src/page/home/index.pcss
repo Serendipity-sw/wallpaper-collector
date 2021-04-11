@@ -1,5 +1,6 @@
 .contentArea {
     height: calc(100% - var(--menuHeight));
+    overflow: hidden auto;
     padding: 1em;
 
     ul {
@@ -21,8 +22,30 @@
             .img {
                 size: 300Px 200Px;
                 margin: 20Px;
-                background: red;
+
+                img {
+                    size: 100%;
+                    display: block;
+                }
             }
         }
+    }
+}
+
+::-webkit-scrollbar {
+    size: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    transition: all .2s;
+
+    &:hover {
+        background-color: transparent;
     }
 }
