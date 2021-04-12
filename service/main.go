@@ -16,6 +16,7 @@ import (
 var (
 	rt         *gin.Engine
 	pidStrPath = "./service.pid"
+	pictureDir = "./pictureDir"
 	debugFlag  = flag.Bool("d", false, "debug mode")
 )
 
@@ -85,6 +86,15 @@ func serverRun(debug bool) {
 
 	deferinit.RunRoutines()
 	fmt.Println("init all run successfully!")
+
+	_, err := os.Stat(pictureDir)
+	dirExisted := err == nil || os.IsExist(err)
+	if !dirExisted {
+		err = os.Mkdir(pictureDir, os.ModePerm)
+		if err != nil {
+			fmt.Printf("mkdir run err! err: %s \n", err.Error())
+		}
+	}
 
 	ginInit(debug)
 	fmt.Println("ginInit run successfully!")

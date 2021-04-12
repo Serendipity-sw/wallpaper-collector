@@ -3,7 +3,7 @@ import './index.pcss'
 import style from './index.pcss.json'
 import Menu from "../../components/menu";
 import axios from "axios";
-import {message, Modal, Spin} from "antd";
+import {Button, message, Modal, Spin} from "antd";
 import qs from "qs";
 
 class Home extends React.Component {
@@ -72,6 +72,25 @@ class Home extends React.Component {
         }
     }
 
+    fileDownLoad = () => {
+        globalThis.api.send('downUrlLoad', this.state.imgPreview)
+    }
+
+    setWallpaper = () => {
+        this.setState({loading: true, isImgPreview: false})
+        axios.post("http://127.0.0.1:8082/saveImage", qs.stringify({imgUrl: this.state.imgPreview}), {headers: {'content-type': 'application/x-www-form-urlencoded'}}).then(res => {
+            const {data: {code, msg, data}} = res
+            if (code === 200) {
+                globalThis.api.send('setWallpaper', data)
+                message.success('壁纸设置成功!')
+            } else {
+                message.error(msg);
+            }
+        }).finally(_ => {
+            this.setState({loading: false})
+        })
+    }
+
     render() {
         return (
             <>
@@ -97,7 +116,19 @@ class Home extends React.Component {
                     </Spin>
                 </div>
                 <Modal title="图片预览" visible={this.state.isImgPreview} onOk={this.closeImgPreview}
-                       onCancel={this.closeImgPreview}>
+                       okText="down"
+                       onCancel={this.closeImgPreview}
+                       footer={[
+                           <Button key="back" onClick={this.closeImgPreview}>
+                               Close
+                           </Button>,
+                           <Button type="primary" onClick={this.fileDownLoad}>
+                               DownLoad
+                           </Button>,
+                           <Button type="primary" onClick={this.setWallpaper}>
+                               SetWallpaper
+                           </Button>
+                       ]}>
                     <img className={style.previewImg} src={this.state.imgPreview} alt=""/>
                 </Modal>
             </>

@@ -12,3 +12,4 @@ dist/*
 react-build
 logs
 *.pid
+pictureDir
