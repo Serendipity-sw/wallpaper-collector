@@ -1,92 +1,92 @@
 .contentArea {
-    height: calc(100% - var(--menuHeight));
-    overflow: hidden auto;
-    padding: 1em;
+  height: calc(100% - var(--menuHeight));
+  overflow: hidden auto;
+  padding: 1em;
 
-    ul {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        line-height: 0;
-    }
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 0;
+  }
 
-    .imgArea {
-        display: inline-block;
-        line-height: 0;
+  .imgArea {
+    display: inline-block;
+    line-height: 0;
 
-        .picture {
-            display: inline-block;
-            size: 320Px 220Px;
-            margin: 0;
+    .picture {
+      display: inline-block;
+      size: 320Px 220Px;
+      margin: 0;
 
-            .img {
-                size: 300Px 200Px;
-                margin: 20Px;
-                position: relative;
+      .img {
+        size: 300Px 200Px;
+        margin: 20Px;
+        position: relative;
 
-                img {
-                    size: 100%;
-                    display: block;
-                    cursor: pointer;
-                }
-
-                .thumbInfo {
-                    position: absolute auto auto 0 auto;
-                    size: 100% 28px;
-                    background-color: rgba(0,0,0,.165);
-                    background-image: linear-gradient(to bottom,rgba(0,0,0,.03) 0,rgba(0,0,0,.3) 100%);
-                    padding: 0 7px;
-                    @util center;
-
-                    span {
-                        color: #fff;
-                        font-size: 1em;
-                        text-shadow: 1px 1px 1px rgb(0 0 0 / 75%);
-                    }
-
-                    .star {
-                        position: absolute 0 auto 0 7px;
-                        @util center;
-                    }
-
-                    .imgSize {
-
-                    }
-                }
-            }
+        img {
+          size: 100%;
+          display: block;
+          cursor: pointer;
         }
+
+        .thumbInfo {
+          position: absolute auto auto 0 auto;
+          size: 100% 28px;
+          background-color: rgba(0, 0, 0, .165);
+          background-image: linear-gradient(to bottom, rgba(0, 0, 0, .03) 0, rgba(0, 0, 0, .3) 100%);
+          padding: 0 7px;
+          @util center;
+
+          span {
+            color: #fff;
+            font-size: 1em;
+            text-shadow: 1px 1px 1px rgb(0 0 0 / 75%);
+          }
+
+          .star {
+            position: absolute 0 auto 0 7px;
+            @util center;
+          }
+
+          .imgSize {
+
+          }
+        }
+      }
     }
+  }
 }
 
 .loading {
-    :global(.ant-spin) {
-        position: fixed !important;
-        max-height: 100% !important;
-    }
+  :global(.ant-spin) {
+    position: fixed !important;
+    max-height: 100% !important;
+  }
 
-    :global(.ant-spin-text) {
-        text-shadow: none !important;
-    }
+  :global(.ant-spin-text) {
+    text-shadow: none !important;
+  }
 }
 
 .previewImg {
-    width: 475px;
+  width: 475px;
 }
 
 ::-webkit-scrollbar {
-    size: 0;
-    background: transparent;
+  size: 0;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 0;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    transition: all .2s;
+  background-color: transparent;
+  transition: all .2s;
 
-    &:hover {
-        background-color: transparent;
-    }
+  &:hover {
+    background-color: transparent;
+  }
 }
