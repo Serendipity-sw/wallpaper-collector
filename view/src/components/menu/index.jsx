@@ -14,7 +14,7 @@ class Menu extends React.Component {
                 <ul className={style.menuArea}>
                     <li>
                         <NavLink to="/" className={style.menu} activeClassName={style.selected} exact>
-                            <span>排行榜</span>
+                            <span>WallHaven</span>
                         </NavLink>
                     </li>
                     <li>

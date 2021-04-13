@@ -107,6 +107,10 @@ class Home extends React.Component {
                                                     this.showPreview(item.img_preview)
                                                 }}
                                                      src={item.img_url} alt=""/>
+                                                <div className={style.thumbInfo}>
+                                                    <span className={style.star}>Star {item.star}</span>
+                                                    <span className={style.imgSize}>{item.img_size}</span>
+                                                </div>
                                             </div>
                                         </figure>
                                     </li>

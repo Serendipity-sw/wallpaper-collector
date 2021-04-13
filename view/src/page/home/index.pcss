@@ -22,11 +22,36 @@
             .img {
                 size: 300Px 200Px;
                 margin: 20Px;
+                position: relative;
 
                 img {
                     size: 100%;
                     display: block;
                     cursor: pointer;
+                }
+
+                .thumbInfo {
+                    position: absolute auto auto 0 auto;
+                    size: 100% 28px;
+                    background-color: rgba(0,0,0,.165);
+                    background-image: linear-gradient(to bottom,rgba(0,0,0,.03) 0,rgba(0,0,0,.3) 100%);
+                    padding: 0 7px;
+                    @util center;
+
+                    span {
+                        color: #fff;
+                        font-size: 1em;
+                        text-shadow: 1px 1px 1px rgb(0 0 0 / 75%);
+                    }
+
+                    .star {
+                        position: absolute 0 auto 0 7px;
+                        @util center;
+                    }
+
+                    .imgSize {
+
+                    }
                 }
             }
         }
