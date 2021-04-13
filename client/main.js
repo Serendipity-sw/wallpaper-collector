@@ -19,10 +19,20 @@ const createWindow = () => {
     if (process.env.NODE_ENV === 'development') {
         mainWindow.webContents.openDevTools()
         mainWindow.loadURL('http://localhost:8080/index.html');
-        exec(path.join(__dirname, '../service/service.exe'))
+        if (process.platform === 'darwin') {
+            // mac 系统
+            exec(path.join(__dirname, '../service/service'))
+        } else {
+            exec(path.join(__dirname, '../service/service.exe'))
+        }
     } else {
         mainWindow.loadFile(process.resourcesPath + '/index.html');
-        exec(process.resourcesPath + '/service.exe')
+        if (process.platform === 'darwin') {
+            // mac 系统
+            exec(process.resourcesPath + '/service')
+        } else {
+            exec(process.resourcesPath + '/service.exe')
+        }
     }
 
 };
