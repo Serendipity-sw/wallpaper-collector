@@ -8,7 +8,7 @@
     "go:build": "cd service && go build -o ../react-build",
     "go:build-win": "cd service && cross-env GOOS=windows go build -o ../react-build",
     "start:react": "webpack serve --progress --mode development -c view/config/webpack/webpack.conf.js",
-    "start:dev": "yarn run go:start && concurrently \"yarn run start:react\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development electron .\"",
+    "start:dev": "concurrently \"yarn run start:react\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development electron .\"",
     "start": "yarn run go:start && concurrently \"yarn run start:react\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development electron .\"",
     "build:electron-win": "cross-env ELECTRON_BUILDER_BINARIES_MIRROR=http://npm.taobao.org/mirrors/electron-builder-binaries/ electron-builder build --win",
     "build:electron": "cross-env ELECTRON_BUILDER_BINARIES_MIRROR=http://npm.taobao.org/mirrors/electron-builder-binaries/ electron-builder build",
