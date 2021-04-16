@@ -10,8 +10,8 @@
     "start:react": "webpack serve --progress --mode development -c view/config/webpack/webpack.conf.js",
     "start:dev": "concurrently \"yarn run start:react\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development electron .\"",
     "start": "yarn run go:start && concurrently \"yarn run start:react\" \"wait-on http://localhost:8080 && cross-env NODE_ENV=development electron .\"",
-    "build:electron-win": "cross-env ELECTRON_BUILDER_BINARIES_MIRROR=http://npm.taobao.org/mirrors/electron-builder-binaries/ electron-builder build --win",
-    "build:electron": "cross-env ELECTRON_BUILDER_BINARIES_MIRROR=http://npm.taobao.org/mirrors/electron-builder-binaries/ electron-builder build",
+    "build:electron-win": "cross-env ELECTRON_BUILDER_BINARIES_MIRROR=https://npm.taobao.org/mirrors/electron-builder-binaries/ electron-builder build --win",
+    "build:electron": "cross-env ELECTRON_BUILDER_BINARIES_MIRROR=https://npm.taobao.org/mirrors/electron-builder-binaries/ electron-builder build",
     "build:react": "webpack --progress --mode production -c view/config/webpack/webpack.conf.js && gulp buildTime",
     "build": "yarn run build:react && yarn run go:build && yarn run build:electron",
     "build:win": "yarn run build:react && yarn run go:build-win && yarn run build:electron-win"
