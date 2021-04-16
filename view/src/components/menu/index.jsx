@@ -17,16 +17,6 @@ class Menu extends React.Component {
                             <span>WallHaven</span>
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/home" className={style.menu} activeClassName={style.selected} exact>
-                            <span>COS</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/home" className={style.menu} activeClassName={style.selected} exact>
-                            <span>二次元</span>
-                        </NavLink>
-                    </li>
                 </ul>
             </div>
         );
