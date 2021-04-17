@@ -1,7 +1,6 @@
 import React from 'react';
 import {HashRouter, Route} from 'react-router-dom';
-import './index.pcss'
-import style from './index.pcss.json'
+import style from './index.pcss'
 import Home from "../page/home";
 
 class Router extends React.Component {

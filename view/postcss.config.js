@@ -8,7 +8,6 @@ module.exports = {
 
       },
     }),
-    require('postcss-modules'),
     require('postcss-initial'),
     require('postcss-preset-env'),
     require('postcss-utilities')({

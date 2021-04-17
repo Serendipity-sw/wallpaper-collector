@@ -42,6 +42,9 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
+                            modules: {
+                                localIdentName: "[path]__[name]__[local]--[hash:base64:12]",
+                            },
                             sourceMap: true
                         }
                     },
@@ -51,8 +54,8 @@ module.exports = {
                 ]
             },
             {
-                test:/\.css$/,
-                use : ['style-loader','css-loader']
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(?:ico|png|svg|jpg|jpeg|gif)$/i,

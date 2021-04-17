@@ -1,6 +1,5 @@
 import React from 'react';
-import './index.pcss'
-import style from './index.pcss.json'
+import style from './index.pcss'
 import {NavLink} from "react-router-dom";
 
 class Menu extends React.Component {

@@ -62,7 +62,6 @@
     "postcss-font-magician": "^3.0.0",
     "postcss-initial": "^4.0.0",
     "postcss-loader": "^5.1.0",
-    "postcss-modules": "^4.0.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-pxtorem": "^6.0.0",
     "postcss-short": "^5.0.0",

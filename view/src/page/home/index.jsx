@@ -1,6 +1,5 @@
 import React from 'react';
-import './index.pcss'
-import style from './index.pcss.json'
+import style from './index.pcss'
 import Menu from "../../components/menu";
 import axios from "axios";
 import {Button, message, Modal, Spin} from "antd";
